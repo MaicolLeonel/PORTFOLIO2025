@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ThemeToggle from './ThemeToggle';
-import '../styles/Navbar.css';
+import Container from '../ui/Container';
+import '../../styles/Navbar.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,10 +11,9 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
-      // Detectar sección activa
+
       const sections = ['inicio', 'sobre-mi', 'habilidades', 'proyectos', 'contacto'];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -40,7 +40,7 @@ const Navbar = () => {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   };
@@ -50,26 +50,17 @@ const Navbar = () => {
     { id: 'sobre-mi', label: 'Sobre mí' },
     { id: 'habilidades', label: 'Habilidades' },
     { id: 'proyectos', label: 'Proyectos' },
-    { id: 'contacto', label: 'Contacto' }
+    { id: 'contacto', label: 'Contacto' },
   ];
 
   return (
-    <motion.nav
-      className={`navbar ${isScrolled ? 'scrolled' : ''}`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="navbar-container">
-        <motion.div
-          className="navbar-logo"
-          onClick={() => scrollToSection('inicio')}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
+    <motion.nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`} initial={{ y: -80 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>
+      <Container className="navbar-container">
+        <motion.button className="navbar-logo" onClick={() => scrollToSection('inicio')} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <span className="logo-dot" />
           <span className="logo-text">TukCode</span>
-        </motion.div>
-        
+        </motion.button>
+
         <div className="navbar-right">
           <ul className="navbar-menu">
             {navItems.map((item) => (
@@ -87,10 +78,9 @@ const Navbar = () => {
           </ul>
           <ThemeToggle />
         </div>
-      </div>
+      </Container>
     </motion.nav>
   );
 };
 
 export default Navbar;
-

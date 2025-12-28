@@ -1,0 +1,190 @@
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-heading--left {
+  text-align: left;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-2xs) var(--spacing-sm);
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.12);
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.section-title {
+  font-size: clamp(1.9rem, 2.8vw, 2.5rem);
+  margin: var(--spacing-sm) 0 var(--spacing-xs);
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  background: linear-gradient(120deg, var(--color-text), rgba(255, 255, 255, 0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  color: var(--color-muted);
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: 0.9rem 1.4rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--easing), box-shadow var(--duration-base) var(--easing), background var(--duration-base) var(--easing), border var(--duration-base) var(--easing);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent);
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--easing);
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-success));
+  color: #0b1020;
+  box-shadow: 0 15px 45px rgba(124, 58, 237, 0.35);
+}
+
+.btn--secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-text);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.btn:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), var(--glow);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+  padding: var(--spacing-2xs) var(--spacing-sm);
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  font-size: 0.9rem;
+  border: 1px solid var(--color-border);
+}
+
+.badge--accent {
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--color-accent);
+  border-color: rgba(124, 58, 237, 0.35);
+}
+
+.badge--ghost {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text);
+}
+
+.card {
+  background: radial-gradient(circle at 10% 10%, rgba(124, 58, 237, 0.08), transparent 40%),
+    var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-border), var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--duration-fast) var(--easing), border var(--duration-base) var(--easing), box-shadow var(--duration-base) var(--easing);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent 65%);
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--easing);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(124, 58, 237, 0.35);
+  box-shadow: var(--shadow-soft), 0 0 0 1px rgba(124, 58, 237, 0.25);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.surface {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.typewriter-text {
+  font-family: var(--font-mono);
+  color: var(--color-success);
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 10px;
+  color: var(--color-accent);
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}

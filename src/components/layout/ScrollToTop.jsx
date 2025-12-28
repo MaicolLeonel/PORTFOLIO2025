@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowUp } from 'react-icons/fa';
-import '../styles/ScrollToTop.css';
+import '../../styles/ScrollToTop.css';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,6 +32,7 @@ const ScrollToTop = () => {
         <motion.button
           className="scroll-to-top"
           onClick={scrollToTop}
+          aria-label="Volver arriba"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
@@ -46,4 +47,3 @@ const ScrollToTop = () => {
 };
 
 export default ScrollToTop;
-
