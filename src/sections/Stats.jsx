@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import '../styles/Stats.css';
+import { motion, useInView } from 'framer-motion';
+import Container from '../components/ui/Container';
+import Card from '../components/ui/Card';
+import '../styles/sections/Stats.css';
 
 const AnimatedCounter = ({ value, suffix = '', duration = 2 }) => {
   const [count, setCount] = useState(0);
@@ -48,7 +49,7 @@ const Stats = () => {
 
   return (
     <section className="stats" ref={ref}>
-      <div className="container">
+      <Container>
         <motion.div
           className="stats-grid"
           initial={{ opacity: 0, y: 50 }}
@@ -59,22 +60,23 @@ const Stats = () => {
             <motion.div
               key={stat.id}
               className="stat-card"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.05, y: -5 }}
+              whileHover={{ scale: 1.03, y: -4 }}
             >
-              <div className="stat-value">
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-              </div>
-              <div className="stat-label">{stat.label}</div>
+              <Card className="stat-card-inner">
+                <div className="stat-value">
+                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                </div>
+                <div className="stat-label">{stat.label}</div>
+              </Card>
             </motion.div>
           ))}
         </motion.div>
-      </div>
+      </Container>
     </section>
   );
 };
 
 export default Stats;
-

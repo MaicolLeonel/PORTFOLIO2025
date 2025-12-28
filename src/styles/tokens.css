@@ -1,0 +1,55 @@
+:root {
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Palette - dark tech */
+  --color-bg: #060910;
+  --color-surface: #0b1020;
+  --color-surface-2: #0f172a;
+  --color-elevated: #111a2f;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text: #e5e7eb;
+  --color-muted: #9ca3af;
+  --color-accent: #7c3aed;
+  --color-accent-strong: #5b21b6;
+  --color-glow: rgba(124, 58, 237, 0.35);
+  --color-success: #22d3ee;
+
+  /* Layout */
+  --container-width: 1200px;
+  --spacing-2xs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --shadow-soft: 0 20px 80px rgba(0, 0, 0, 0.35);
+  --shadow-border: 0 1px 0 0 var(--color-border);
+  --line-width: 1px;
+  --glow: 0 0 30px var(--color-glow);
+
+  /* Motion */
+  --duration-fast: 160ms;
+  --duration-base: 240ms;
+  --duration-slow: 400ms;
+  --easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root[data-theme='light'] {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f5f9;
+  --color-elevated: #e2e8f0;
+  --color-border: rgba(15, 23, 42, 0.08);
+  --color-text: #0f172a;
+  --color-muted: #475569;
+  --color-accent: #6d28d9;
+  --color-accent-strong: #5b21b6;
+  --color-glow: rgba(109, 40, 217, 0.2);
+  --color-success: #0ea5e9;
+}

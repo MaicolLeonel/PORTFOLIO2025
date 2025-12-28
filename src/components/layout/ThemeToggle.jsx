@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { useTheme } from '../context/ThemeContext';
 import { FaSun, FaMoon } from 'react-icons/fa';
-import '../styles/ThemeToggle.css';
+import { useTheme } from '../../context/ThemeContext';
+import '../../styles/ThemeToggle.css';
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
@@ -31,4 +31,3 @@ const ThemeToggle = () => {
 };
 
 export default ThemeToggle;
-

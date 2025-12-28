@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
-import '../styles/WhatsAppButton.css';
+import '../../styles/WhatsAppButton.css';
 
 const WhatsAppButton = () => {
   // Número de WhatsApp (formato internacional sin +)
@@ -45,4 +45,3 @@ const WhatsAppButton = () => {
 };
 
 export default WhatsAppButton;
-

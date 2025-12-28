@@ -11,8 +11,8 @@
 
 .scroll-progress-bar {
   height: 100%;
-  background: var(--gradient-primary);
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  background: linear-gradient(90deg, var(--color-accent), var(--color-success));
+  box-shadow: 0 0 12px var(--color-glow);
   transition: width 0.1s ease;
   position: relative;
   overflow: hidden;
@@ -21,16 +21,8 @@
 .scroll-progress-bar::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
   animation: shimmer 2s infinite;
 }
 
@@ -42,8 +34,3 @@
     transform: translateX(100%);
   }
 }
-
-[data-theme="dark"] .scroll-progress-bar {
-  box-shadow: 0 0 10px rgba(129, 140, 248, 0.5);
-}
-
